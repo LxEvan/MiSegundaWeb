@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "MiSegundaWeb"
+    }
+  },
+  "defaultProject": "MiSegundaWeb",
+  "cli": {
+    "analytics": false
+  }
 }
