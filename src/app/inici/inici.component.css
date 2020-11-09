@@ -1,3 +1,11 @@
-li {
-    list-style-type: georgian;
-  }
+h1, h4{
+  color: purple;
+}
+
+h2 {
+  color: blueviolet;
+}
+
+p {
+  color: lightseagreen;
+}

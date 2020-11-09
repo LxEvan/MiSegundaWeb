@@ -1,0 +1,11 @@
+.imgContainer {
+  max-height: 300px;
+  overflow: hidden;
+}
+
+.imgContainer2  {
+  float: right;
+  width: 400px;
+  max-height: 90px;
+  overflow-inline: auto;
+}

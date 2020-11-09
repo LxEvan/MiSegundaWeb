@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventsComponent implements OnInit {
 
+  category: string = 'All';
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  canviEvent(category: string): void {
+    this.category = category;
   }
 
 }

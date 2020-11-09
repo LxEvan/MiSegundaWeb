@@ -8,6 +8,8 @@ import { EventsComponent } from './events/events.component';
 import { QuiSomComponent } from './qui-som/qui-som.component';
 import { AltaEventComponent } from './alta-event/alta-event.component';
 import { ModificarEventComponent } from './modificar-event/modificar-event.component';
+import { HeaderComponent } from './header/header.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { ModificarEventComponent } from './modificar-event/modificar-event.compo
     EventsComponent,
     QuiSomComponent,
     AltaEventComponent,
-    ModificarEventComponent
+    ModificarEventComponent,
+    HeaderComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
