@@ -10,6 +10,7 @@ import { AltaEventComponent } from './alta-event/alta-event.component';
 import { ModificarEventComponent } from './modificar-event/modificar-event.component';
 import { HeaderComponent } from './header/header.component';
 import { MenuComponent } from './menu/menu.component';
+import { LlistatComandesComponent } from './llistat-comandes/llistat-comandes.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MenuComponent } from './menu/menu.component';
     AltaEventComponent,
     ModificarEventComponent,
     HeaderComponent,
-    MenuComponent
+    MenuComponent,
+    LlistatComandesComponent
   ],
   imports: [
     BrowserModule,
