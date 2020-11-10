@@ -1,0 +1,43 @@
+form {
+  width: 25%;
+  border: 1px solid black;
+  margin: 20px;
+  padding: 20px;
+}
+
+label {
+  font-size: 20px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+input, textarea {
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 100px;
+  box-sizing: border-box;
+}
+
+/* modificamos el boton, todos los input que sean button se modificaran */
+input[type="button"]{
+  background-color: blue;
+  color: azure;
+  border: none;
+}
+
+input[type="button"]:hover {
+  background: red;
+  cursor: pointer;
+}
+
+/*no he conseguido que el "correcto" o "incorrecto" se vea justo debajo del label*/
+#correcto, #incorrecto {
+  color: red;
+  font-size: small;
+
+}
+
+#mensaje {
+  color: red;
+  text-align: right;
+}

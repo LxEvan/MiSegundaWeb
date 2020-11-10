@@ -1,1 +1,27 @@
-<p>alta-event works!</p>
+<form action="">
+  <label for="nombre">Nombre:</label>
+  <input type="text" #vName id="" placeholder="Escriu el teu nom">
+
+  <label for="dni">Població:</label>
+  <input type="text" #vLloc id="" placeholder="Escriu la població">
+
+  <label for="email">Email:</label>
+  <input type="email" #vEmail id="" placeholder="Escriu el teu email">
+
+  <div [ngSwitch]="mostrarInfo">
+    <div id="correcte" *ngSwitchCase="'Correcte'">Correcte</div>
+    <div id="incorrecte" *ngSwitchCase="'Incorrecte'">Incorrecte</div>
+  </div>
+
+  <label for="mensaje">Missatge</label>
+  <textarea type="text" #vMensaje  placeholder="Escriu el teu missatge"></textarea>
+
+  <div [ngSwitch]="mostrarMensaje">
+    <div id="mensaje" *ngSwitchCase="'El texto introducido es demasiado corto'">El texto introducido es demasiado corto</div>
+  </div>
+
+  <input type="button"  (click)="EnviarDatos(vName.value, vLloc.value, vEmail.value, vMensaje.value)" value="Enviar"/>
+<!-- .value para que pille directamente el dato, se puede hacer con o sin -->
+</form>
+
+
