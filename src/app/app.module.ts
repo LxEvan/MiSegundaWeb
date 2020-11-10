@@ -10,7 +10,7 @@ import { AltaEventComponent } from './alta-event/alta-event.component';
 import { ModificarEventComponent } from './modificar-event/modificar-event.component';
 import { HeaderComponent } from './header/header.component';
 import { MenuComponent } from './menu/menu.component';
-import { LlistatComandesComponent } from './llistat-comandes/llistat-comandes.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,11 +22,11 @@ import { LlistatComandesComponent } from './llistat-comandes/llistat-comandes.co
     ModificarEventComponent,
     HeaderComponent,
     MenuComponent,
-    LlistatComandesComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

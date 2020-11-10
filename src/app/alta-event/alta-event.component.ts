@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LlistatComandesComponent } from '../llistat-comandes/llistat-comandes.component';
+
 
 @Component({
   selector: 'app-alta-event',
@@ -10,18 +10,30 @@ export class AltaEventComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
-
-
+// declarem les variables necessaries
   mostrarInfo = "";
   mostrarMensaje = "";
+  comandes : string [] = [];
+  novaComanda: string;
 
-  EnviarDatos(nombre, lloc, email, mensaje){
 
-    if(nombre.value =="") {
+  ngOnInit(): void {
+
+  }
+
+  //funcio per validar dades rebudes dels inputs del formulari, la funcio rep els parametres de nom, lloc, email i missatge
+  EnviarDatos(nom, lloc, email, mensaje){
+
+    //comprovem que el valor del nom no sigui buit, si és buit enviem missattge i si és correcte recollim el valor a l'array "comandes"
+
+    if(nom.value =="") {
       alert("El nombre esta vacío");
+
+    }else {
+      this.comandes.push == nom.value;
     }
+
+    //comprovem el valor de la poblacio, si es buit enviem error i el mateix fem amb el correu-e
 
     if(lloc.value =="") {
       this.mostrarInfo="Error!, escriu una població";
@@ -35,8 +47,13 @@ export class AltaEventComponent implements OnInit {
       this.mostrarInfo="Incorrecto";
     }
 
+    //fem comprovacio del text introduit al missatge
+
     if(mensaje.value.length <= 2) {
       this.mostrarMensaje = "El texto introducido es demasiado corto";
     }
+
+
+
   }
 }

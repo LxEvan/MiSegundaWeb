@@ -1,6 +1,10 @@
+<!--formulari-->
+
+<h3>OMPLE EL FORMULARI</h3>
+
 <form action="">
-  <label for="nombre">Nombre:</label>
-  <input type="text" #vName id="" placeholder="Escriu el teu nom">
+  <label for="nombre">Nom:</label>
+  <input type="text" #vName id="name" placeholder="Escriu el teu nom">
 
   <label for="dni">Població:</label>
   <input type="text" #vLloc id="" placeholder="Escriu la població">
@@ -20,8 +24,12 @@
     <div id="mensaje" *ngSwitchCase="'El texto introducido es demasiado corto'">El texto introducido es demasiado corto</div>
   </div>
 
-  <input type="button"  (click)="EnviarDatos(vName.value, vLloc.value, vEmail.value, vMensaje.value)" value="Enviar"/>
-<!-- .value para que pille directamente el dato, se puede hacer con o sin -->
+  <input type="button" (click)="EnviarDatos(vName.value, vLloc.value, vEmail.value, vMensaje.value)" value="Enviar"/>
+
+  <ul>
+   <li *ngFor="let comandes of comandes">{{comandes}}</li>
+  </ul>
+
 </form>
 
 

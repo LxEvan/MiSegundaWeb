@@ -1,11 +1,14 @@
+/*full d'estil pel formulari*/
+
 form {
-  width: 25%;
-  border: 1px solid black;
-  margin: 20px;
-  padding: 20px;
+  width: 100%;
+  margin: 50px 100px 50px 100px;
+  padding: 100px;
+  background-color: #f2f2f2;
 }
 
 label {
+  width: 100%;
   font-size: 20px;
   display: block;
   margin-bottom: 5px;
@@ -14,7 +17,7 @@ label {
 input, textarea {
   margin-bottom: 20px;
   width: 100%;
-  padding: 100px;
+  padding: 10px;
   box-sizing: border-box;
 }
 
@@ -30,7 +33,7 @@ input[type="button"]:hover {
   cursor: pointer;
 }
 
-/*no he conseguido que el "correcto" o "incorrecto" se vea justo debajo del label*/
+
 #correcto, #incorrecto {
   color: red;
   font-size: small;
@@ -40,4 +43,9 @@ input[type="button"]:hover {
 #mensaje {
   color: red;
   text-align: right;
+}
+
+h3 {
+  text-align: center;
+  color: blueviolet
 }
