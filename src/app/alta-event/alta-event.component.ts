@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-//importo la clase Comanda del models con los atributos de Comanda
+//importo la clase Comanda del models amb els atributs que composen la clase Comanda
 import { Comanda } from '../models/dades.model';
 
 @Component({
@@ -18,7 +18,7 @@ export class AltaEventComponent implements OnInit {
   comandesArray : Comanda [] = [];
   novaComanda: string;
 
-//se llama al inicializar el componente
+//es crida a l'inicialitzar el component
   ngOnInit(): void {
     this.comandesArray.push(new Comanda('Pedro', 'Tarragona', 'pedro@gmail.com', 'hola'));
 
