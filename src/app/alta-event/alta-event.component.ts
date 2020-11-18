@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+//importo la clase Comanda del models con los atributos de Comanda
+import { Comanda } from '../models/dades.model';
 
 @Component({
   selector: 'app-alta-event',
@@ -13,11 +14,13 @@ export class AltaEventComponent implements OnInit {
 // declarem les variables necessaries
   mostrarInfo = "";
   mostrarMensaje = "";
-  comandes : string [] = [];
+  //array que recull les dades del formulari
+  comandesArray : Comanda [] = [];
   novaComanda: string;
 
-
+//se llama al inicializar el componente
   ngOnInit(): void {
+    this.comandesArray.push(new Comanda('Pedro', 'Tarragona', 'pedro@gmail.com', 'hola'));
 
   }
 
@@ -29,8 +32,6 @@ export class AltaEventComponent implements OnInit {
     if(nom.value =="") {
       alert("El nombre esta vacío");
 
-    }else {
-      this.comandes.push == nom.value;
     }
 
     //comprovem el valor de la poblacio, si es buit enviem error i el mateix fem amb el correu-e
