@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Comanda } from '../models/dades.model';
 
 
@@ -8,6 +8,9 @@ import { Comanda } from '../models/dades.model';
   styleUrls: ['./events.component.css']
 })
 export class EventsComponent implements OnInit {
+
+
+
 
   constructor() { }
 
@@ -22,10 +25,15 @@ export class EventsComponent implements OnInit {
     this.comandesArray.push(new Comanda('Pedro', 'Tarragona', 'pedro@gmail.com', 'hola'));
   }
 
+  // Funció per guardar la nova comanda
+  //saveComanda(): void {
+   // this.saveEvent.emit(this.comanda);
+ // }
+
   //funcio per afegir una nova comanda a l'array
-  addComanda(newComanda: Comanda): void {
-    this.comandesArray.push(newComanda);
-  }
+ // addComanda(newComanda: Comanda): void {
+   // this.comandesArray.push(newComanda);
+  //}
 
   canviEvent(category: string): void {
     this.category = category;
