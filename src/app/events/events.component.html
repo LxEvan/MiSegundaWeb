@@ -13,7 +13,8 @@
 
 
   <div *ngIf="category === 'Alta Event'" class="row" style="margin-top: 1em;">
-          <app-alta-event></app-alta-event>
+          <app-alta-event>(comandaEvent)="addComanda($event)"</app-alta-event>
+          {{this.comandesArray}};
   </div>
 
   <div *ngIf="category === 'Modificar Event'"  class="row" style="margin-top: lem">

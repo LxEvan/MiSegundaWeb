@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-//importo la clase Comanda del models amb els atributs que composen la clase Comanda
+import { NgLocaleLocalization } from '@angular/common';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+// Importo la clase Comanda del models amb els atributs que composen la clase Comanda
 import { Comanda } from '../models/dades.model';
 
 @Component({
@@ -9,25 +10,44 @@ import { Comanda } from '../models/dades.model';
 })
 export class AltaEventComponent implements OnInit {
 
+  newComanda: Comanda = null;
+
+  // Creem un emisor d'events que enviarà la comanda creada
+  @Output() comandaEvent: EventEmitter<Comanda> = new EventEmitter<Comanda>();
+
   constructor() { }
 
-// declarem les variables necessaries
+// Declarem les variables necessaries
   mostrarInfo = "";
   mostrarMensaje = "";
-  //array que recull les dades del formulari
-  comandesArray : Comanda [] = [];
+
+
   novaComanda: string;
 
-//es crida a l'inicialitzar el component
+
   ngOnInit(): void {
-    this.comandesArray.push(new Comanda('Pedro', 'Tarragona', 'pedro@gmail.com', 'hola'));
+  }
+
+  // Funció que s'executa a l'enviar el formulari
+  onFormSubmit(itemForm: any): void {
+
+      // Guardem els valors del formulari en una nova comanda
+      this.newComanda = new Comanda(itemForm.controls.nom.value,
+                                    itemForm.controls.lloc.value,
+                                    itemForm.controls.email.value,
+                                    itemForm.controls.mensaje.value);
+
+      console.log(this.newComanda);
+
+      // Enviem l'event "comandaEvent" i li passem la comanda creada
+      this.comandaEvent.emit(this.newComanda);
 
   }
 
-  //funcio per validar dades rebudes dels inputs del formulari, la funcio rep els parametres de nom, lloc, email i missatge
+  // Funcio per validar dades rebudes dels inputs del formulari, la funcio rep els parametres de nom, lloc, email i missatge
   EnviarDatos(nom, lloc, email, mensaje){
 
-    //comprovem que el valor del nom no sigui buit, si és buit enviem missattge i si és correcte recollim el valor a l'array "comandes"
+    // Comprovem que el valor del nom no sigui buit, si és buit enviem missattge i si és correcte recollim el valor a l'array "comandes"
 
     if(nom.value =="") {
       alert("El nombre esta vacío");

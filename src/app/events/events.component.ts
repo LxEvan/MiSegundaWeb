@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Comanda } from '../models/dades.model';
 
 
 @Component({
@@ -8,11 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EventsComponent implements OnInit {
 
-  category: string = 'All';
-
   constructor() { }
 
+  category: string = 'All';
+
+  comandesArray : Comanda [] = [];
+
+
+//es crida a l'inicialitzar el component
   ngOnInit(): void {
+
+    this.comandesArray.push(new Comanda('Pedro', 'Tarragona', 'pedro@gmail.com', 'hola'));
+  }
+
+  //funcio per afegir una nova comanda a l'array
+  addComanda(newComanda: Comanda): void {
+    this.comandesArray.push(newComanda);
   }
 
   canviEvent(category: string): void {
