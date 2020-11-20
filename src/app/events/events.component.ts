@@ -15,6 +15,8 @@ export class EventsComponent implements OnInit {
   category: string = 'All';
 
   comandesArray : Comanda [] = [];
+  comandaSelected : Comanda = null;
+  isCreatingNewCom : boolean = false;
 
 
 //es crida a l'inicialitzar el component
@@ -26,6 +28,32 @@ export class EventsComponent implements OnInit {
     this.comandesArray.push(new Comanda('Isabel', 'Cambrils', 'isa@gmail.com', 'hola3'));
     this.comandesArray.push(new Comanda('Juli', 'Riudecols', 'juli@gmail.com', 'hola4'));
 
+  }
+/////////////////A PARTIR DE AQUÍ
+  // Funció que s'exejuta al fer click(seleccionar) a un personatge de la llista
+  selectCharacter(comanda: Comanda): void {
+
+    // Treiem la interfaz de crear una comanda nova
+    this.isCreatingNewCom = false;
+
+    // Guardem a una variable de la class el personatge seleccionat
+    this.comandaSelected = comanda;
+  }
+
+  // Funció per actualitzar la comanda
+  updateComanda(comanda: Comanda): void {
+
+    // Posem el valor en null per a que desapareixin les dades al forumlari
+    this.comandaSelected = null;
+
+    // Cerquem una comanda amb el mateix nom i l'actualitzem
+    for (let i = 0; i < this.comandesArray.length; i++) {
+      if (this.comandesArray[i].nom === comanda.nom) {
+        this.comandesArray[i].poblacio === comanda.poblacio;
+        this.comandesArray[i].email === comanda.email;
+        this.comandesArray[i].missatge === comanda.missatge;
+      }
+    }
   }
 
   // Funció per guardar la nova comanda
