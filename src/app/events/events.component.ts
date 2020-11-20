@@ -23,6 +23,11 @@ export class EventsComponent implements OnInit {
   ngOnInit(): void {
 
     this.comandesArray.push(new Comanda('Pedro', 'Tarragona', 'pedro@gmail.com', 'hola'));
+    this.comandesArray.push(new Comanda('Laura', 'Lleida', 'la@gmail.com', 'hola1'));
+    this.comandesArray.push(new Comanda('Jordi', 'Girona', 'jo@gmail.com', 'hola2'));
+    this.comandesArray.push(new Comanda('Isabel', 'Cambrils', 'isa@gmail.com', 'hola3'));
+    this.comandesArray.push(new Comanda('Juli', 'Riudecols', 'juli@gmail.com', 'hola4'));
+
   }
 
   // Funció per guardar la nova comanda
