@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Comanda } from '../models/dades.model';
 
 
+
 @Component({
   selector: 'app-events',
   templateUrl: './events.component.html',
@@ -36,9 +37,9 @@ export class EventsComponent implements OnInit {
  // }
 
   //funcio per afegir una nova comanda a l'array
- // addComanda(newComanda: Comanda): void {
-   // this.comandesArray.push(newComanda);
-  //}
+    addComanda(newComanda: Comanda): void {
+    this.comandesArray.push(newComanda);
+  }
 
   canviEvent(category: string): void {
     this.category = category;

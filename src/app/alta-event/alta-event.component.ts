@@ -1,7 +1,8 @@
-import { NgLocaleLocalization } from '@angular/common';
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 // Importo la clase Comanda del models amb els atributs que composen la clase Comanda
 import { Comanda } from '../models/dades.model';
+
 
 @Component({
   selector: 'app-alta-event',
@@ -14,6 +15,7 @@ export class AltaEventComponent implements OnInit {
 
   // Creem un emisor d'events que enviarà la comanda creada
   @Output() comandaEvent: EventEmitter<Comanda> = new EventEmitter<Comanda>();
+
 
   constructor() { }
 
@@ -45,7 +47,7 @@ export class AltaEventComponent implements OnInit {
   }
 
   // Funcio per validar dades rebudes dels inputs del formulari, la funcio rep els parametres de nom, lloc, email i missatge
-  EnviarDatos(nom, lloc, email, mensaje){
+  EnviarDatos(nom, poblacio, email, missatge){
 
     // Comprovem que el valor del nom no sigui buit, si és buit enviem missattge i si és correcte recollim el valor a l'array "comandes"
 
@@ -56,7 +58,7 @@ export class AltaEventComponent implements OnInit {
 
     //comprovem el valor de la poblacio, si es buit enviem error i el mateix fem amb el correu-e
 
-    if(lloc.value =="") {
+    if(poblacio.value =="") {
       this.mostrarInfo="Error!, escriu una població";
 
     if(email.value == "") {
@@ -70,7 +72,7 @@ export class AltaEventComponent implements OnInit {
 
     //fem comprovacio del text introduit al missatge
 
-    if(mensaje.value.length <= 2) {
+    if(missatge.value.length <= 2) {
       this.mostrarMensaje = "El texto introducido es demasiado corto";
     }
 

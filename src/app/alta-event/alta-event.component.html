@@ -5,13 +5,13 @@
 <form #itemForm="ngForm" (ngSubmit)="onFormSubmit(itemForm)">
 
   <div class="form-group">
-    <label for="nombre">Nom:</label>
-    <input type="text" class="form-control" #vName id="name" placeholder="Escriu el teu nom">
+    <label for="nom">Nom:</label>
+    <input type="text" class="form-control" #vNom id="nom" placeholder="Escriu el teu nom">
   </div>
 
   <div class="form-group">
      <label for="poblacio">Població:</label>
-     <input type="text" class="form-control" #vLloc id="poblacio" placeholder="Escriu la població">
+     <input type="text" class="form-control" #vPoblacio id="poblacio" placeholder="Escriu la població">
   </div>
 
 
@@ -20,23 +20,23 @@
       <input type="email" class="form-control" #vEmail id="email" placeholder="Escriu el teu email">
   </div>
 
-  <div [ngSwitch]="mostrarInfo">
+ <!-- <div [ngSwitch]="mostrarInfo">
     <div id="correcte" *ngSwitchCase="'Correcte'">Correcte</div>
     <div id="incorrecte" *ngSwitchCase="'Incorrecte'">Incorrecte</div>
-  </div>
+  </div>!-->
 
   <div class="form-group">
-     <label for="mensaje">Missatge</label>
-     <textarea type="text" class="form-control" #vMensaje id="mensaje" placeholder="Escriu el teu missatge"></textarea>
+     <label for="missatge">Missatge</label>
+     <textarea type="text" class="form-control" #vMissatge id="mensaje" placeholder="Escriu el teu missatge"></textarea>
   </div>
 
-  <div [ngSwitch]="mostrarMensaje">
+ <!-- <div [ngSwitch]="mostrarMensaje">
     <div id="mensaje" *ngSwitchCase="'El texto introducido es demasiado corto'">El texto introducido es demasiado corto</div>
-  </div>
+  </div>!-->
 
-  <!--<input type="button" (click)="EnviarDatos(vName.value, vLloc.value, vEmail.value, vMensaje.value)" value="Enviar"/>!-->
+  <!--<input type="button" (click)="EnviarDatos(vNom.value, vPoblacio.value, vEmail.value, vMisatge.value)" value="Enviar"/>!-->
 
-  <button type="submit" class="btn btn-primary" [disabled]="itemForm.invalid">Submit</button>
+  <button type="button" class="btn btn-primary" (click)="onFormSubmit()">Submit</button>
 
 
 

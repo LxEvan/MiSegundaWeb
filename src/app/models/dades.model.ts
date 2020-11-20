@@ -4,7 +4,7 @@ export class Comanda    {
     constructor(
         public nom: string,
         public poblacio: string,
-        public name: string,
+        public email: string,
         public missatge: string
     ){}
 }

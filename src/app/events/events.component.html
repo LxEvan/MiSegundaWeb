@@ -13,12 +13,12 @@
   <div class="col">
     <div class="list-group">
       <a *ngFor="let comanda of comandesArray" class="list-group-item list-group-item-action">Comanda de:
-        {{comanda.nom}}</a>
+        {{comanda.nom}}, Localitat: {{comanda.poblacio}}</a>
     </div>
   </div>
 
   <div *ngIf="category === 'Alta Event'" class="row" style="margin-top: 1em;">
-          <app-alta-event>(comandaEvent)="addComanda($event)"</app-alta-event>
+          <app-alta-event (comandaEvent)="addComanda($event)"></app-alta-event>
 
   </div>
 
