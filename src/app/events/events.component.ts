@@ -10,9 +10,6 @@ import { Comanda } from '../models/dades.model';
 })
 export class EventsComponent implements OnInit {
 
-
-
-
   constructor() { }
 
   category: string = 'All';

@@ -33,11 +33,14 @@ export class AltaEventComponent implements OnInit {
   // Funció que s'executa a l'enviar el formulari
   onFormSubmit(itemForm: any): void {
 
+      console.log(itemForm);
+      
+
       // Guardem els valors del formulari en una nova comanda
       this.newComanda = new Comanda(itemForm.controls.nom.value,
-                                    itemForm.controls.lloc.value,
+                                    itemForm.controls.poblacio.value,
                                     itemForm.controls.email.value,
-                                    itemForm.controls.mensaje.value);
+                                    itemForm.controls.missatge.value);
 
       console.log(this.newComanda);
 
@@ -61,9 +64,9 @@ export class AltaEventComponent implements OnInit {
     if(poblacio.value =="") {
       this.mostrarInfo="Error!, escriu una població";
 
-    if(email.value == "") {
-      this.mostrarInfo="Error!, escriu el teu email";
-    }
+      if(email.value == "") {
+        this.mostrarInfo="Error!, escriu el teu email";
+      }
 
 
     }else {

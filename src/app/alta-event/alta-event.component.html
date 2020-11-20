@@ -6,18 +6,18 @@
 
   <div class="form-group">
     <label for="nom">Nom:</label>
-    <input type="text" class="form-control" #vNom id="nom" placeholder="Escriu el teu nom">
+    <input type="text" class="form-control" #vNom id="nom" name="nom" placeholder="Escriu el teu nom" ngModel required>
   </div>
 
   <div class="form-group">
      <label for="poblacio">Població:</label>
-     <input type="text" class="form-control" #vPoblacio id="poblacio" placeholder="Escriu la població">
+     <input type="text" class="form-control" #vPoblacio id="poblacio" name="poblacio" placeholder="Escriu la població" ngModel required>
   </div>
 
 
   <div class="form-group">
       <label for="email">Email:</label>
-      <input type="email" class="form-control" #vEmail id="email" placeholder="Escriu el teu email">
+      <input type="email" class="form-control" #vEmail id="email" name="email" placeholder="Escriu el teu email" ngModel required>
   </div>
 
  <!-- <div [ngSwitch]="mostrarInfo">
@@ -27,7 +27,7 @@
 
   <div class="form-group">
      <label for="missatge">Missatge</label>
-     <textarea type="text" class="form-control" #vMissatge id="mensaje" placeholder="Escriu el teu missatge"></textarea>
+     <textarea type="text" class="form-control" #vMissatge id="missatge" name="missatge" placeholder="Escriu el teu missatge" ngModel required></textarea>
   </div>
 
  <!-- <div [ngSwitch]="mostrarMensaje">
@@ -36,7 +36,7 @@
 
   <!--<input type="button" (click)="EnviarDatos(vNom.value, vPoblacio.value, vEmail.value, vMisatge.value)" value="Enviar"/>!-->
 
-  <button type="button" class="btn btn-primary" (click)="onFormSubmit()">Submit</button>
+  <button type="button" class="btn btn-primary" (click)="onFormSubmit(itemForm)">Submit</button>
 
 
 
