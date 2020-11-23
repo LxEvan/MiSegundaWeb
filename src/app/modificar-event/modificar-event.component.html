@@ -2,4 +2,29 @@
 
 <h3>MODIFICA ELS CAMPS DEL FORMULARI QUE DESSITGIS</h3>
 
-ERROR! aquest apartat no funciona.
+<div *ngIf="comanda !== null" class="card" style="width: 18rem;">
+
+  <div class="card body">
+    <h5 class="card-title">{{comanda.nom}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{comanda.poblacio}}</h6>
+    <form>
+      <div class="form-group">
+        <label for="nom">Nom:</label>
+        <input type="text" class="form-control" id="nom" name="nom" [(ngModel)] = "comanda.nom">
+      </div>
+
+      <div class="form-group">
+        <label for="poblacio">Poblacio:</label>
+        <input type="text" class="form-control" id="poblacio" name="poblacio" [(ngModel)] = "comanda.poblacio">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" class="form-control" id="email" name="email" [(ngModel)] = "comanda.email">
+      </div>
+
+    </form>
+
+    <button type="button" class="btn btn-warning" (click) = "saveComanda()">Desar</button> &nbsp;
+  </div>
+</div>

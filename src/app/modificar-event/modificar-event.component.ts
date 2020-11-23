@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Comanda } from '../models/dades.model';
 
 @Component({
   selector: 'app-modificar-event',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ModificarEventComponent implements OnInit {
 
+  @Input() comanda : Comanda;
+  @Output() saveEvent : EventEmitter<Comanda> = new EventEmitter<Comanda>();
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  saveComanda(): void {
+    this.saveEvent.emit(this.comanda);
   }
 
 }

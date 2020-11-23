@@ -13,7 +13,9 @@
   <div class="col">
     <div class="list-group">
       <a *ngFor="let comanda of comandesArray" class="list-group-item list-group-item-action">Comanda de:
-        {{comanda.nom}}, Localitat: {{comanda.poblacio}}</a>
+        {{comanda.nom}}, Localitat: {{comanda.poblacio}}
+      (click)="selectComanda(comanda)"</a>
+
     </div>
   </div>
 
@@ -23,5 +25,5 @@
   </div>
 
   <div *ngIf="category === 'Modificar Event'"  class="row" style="margin-top: lem">
-          <app-modificar-event></app-modificar-event>
+          <app-modificar-event [comanda]="comandaSelected" (saveEvent)="updateComanda($event)"></app-modificar-event>
   </div>
