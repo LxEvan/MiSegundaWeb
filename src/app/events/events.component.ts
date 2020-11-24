@@ -1,8 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Comanda } from '../models/dades.model';
 
-
-
 @Component({
   selector: 'app-events',
   templateUrl: './events.component.html',
@@ -10,7 +8,6 @@ import { Comanda } from '../models/dades.model';
 })
 export class EventsComponent implements OnInit {
 
-  constructor() { }
 
   category: string = 'All';
 
@@ -31,7 +28,7 @@ export class EventsComponent implements OnInit {
   }
 /////////////////A PARTIR DE AQUÍ
   // Funció que s'executa al fer click(seleccionar) a un personatge de la llista
-  selectCharacter(comanda: Comanda): void {
+  selectComanda(comanda: Comanda): void {
 
     // Treiem la interfaz de crear una comanda nova
     this.isCreatingNewCom = false;
@@ -49,17 +46,31 @@ export class EventsComponent implements OnInit {
     // Cerquem una comanda amb el mateix nom i l'actualitzem
     for (let i = 0; i < this.comandesArray.length; i++) {
       if (this.comandesArray[i].nom === comanda.nom) {
-        this.comandesArray[i].poblacio === comanda.poblacio;
-        this.comandesArray[i].email === comanda.email;
-        this.comandesArray[i].missatge === comanda.missatge;
+        this.comandesArray[i].poblacio = comanda.poblacio;
+        this.comandesArray[i].email = comanda.email;
+        this.comandesArray[i].missatge = comanda.missatge;
       }
     }
   }
 
-  // Funció per guardar la nova comanda
-  //saveComanda(): void {
-   // this.saveEvent.emit(this.comanda);
- // }
+  // Funció per eliminar una comanda
+  deleteComanda(comanda: Comanda) {
+
+    // Posem el valor en null per a que desapareguin les dades
+    this.comandaSelected = null;
+
+    // Filtrem l'array de comandes
+    this.comandesArray = this.comandesArray.filter(
+      (com: Comanda, index: number, array: Comanda[]) => {
+
+        // Si la comanda és diferent a la que hem d'esborrar
+        if (com.nom !== comanda.nom)  {
+
+          // Guardem la comanda a l'array filtrat
+          return com;
+        }
+      });
+  }
 
   //funcio per afegir una nova comanda a l'array
     addComanda(newComanda: Comanda): void {
