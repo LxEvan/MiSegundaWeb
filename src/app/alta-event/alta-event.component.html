@@ -20,23 +20,23 @@
       <input type="email" class="form-control" #vEmail id="email" name="email" placeholder="Escriu el teu email" ngModel required>
   </div>
 
- <!-- <div [ngSwitch]="mostrarInfo">
+  <div [ngSwitch]="mostrarInfo">
     <div id="correcte" *ngSwitchCase="'Correcte'">Correcte</div>
     <div id="incorrecte" *ngSwitchCase="'Incorrecte'">Incorrecte</div>
-  </div>!-->
+  </div>
 
   <div class="form-group">
      <label for="missatge">Missatge</label>
      <textarea type="text" class="form-control" #vMissatge id="missatge" name="missatge" placeholder="Escriu el teu missatge" ngModel required></textarea>
   </div>
 
- <!-- <div [ngSwitch]="mostrarMensaje">
+  <div [ngSwitch]="mostrarMensaje">
     <div id="mensaje" *ngSwitchCase="'El texto introducido es demasiado corto'">El texto introducido es demasiado corto</div>
-  </div>!-->
+  </div>
 
-  <!--<input type="button" (click)="EnviarDatos(vNom.value, vPoblacio.value, vEmail.value, vMisatge.value)" value="Enviar"/>!-->
+  <input type="button" (click)="EnviarDatos(vNom.value, vPoblacio.value, vEmail.value, vMissatge.value)" value="Enviar"/>
 
-  <button type="button" class="btn btn-primary" (click)="onFormSubmit(itemForm)">Submit</button>
+  <button type="button" class="btn btn-primary" (click)="onFormSubmit(itemForm)">Si és correcte Desar</button>
 
 
 

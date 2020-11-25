@@ -24,6 +24,10 @@
 
   </div>
 
-  <div *ngIf="category === 'Modificar Event'"  class="row" style="margin-top: lem">
+  <div *ngIf="category === 'Modificar Event'"  class="row" style = "margin-top: 1em">
           <app-modificar-event [comanda]="comandaSelected" (saveEvent)="updateComanda($event)"></app-modificar-event>
+  </div>
+
+  <div *ngIf="category === 'Eliminar Event'"  class="row" style = "margin-top: 1em">
+
   </div>

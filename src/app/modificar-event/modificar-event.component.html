@@ -2,12 +2,12 @@
 
 <h3>Tria la comanda que vols modificar</h3>
 
-<div *ngIf="comanda !== null" class="card" style="width: 18rem;">
+<div *ngIf="comanda !== null">
+<form>
 
-  <div class="card body">
     <h5 class="card-title">{{comanda.nom}}</h5>
     <h6 class="card-subtitle mb-2 text-muted">{{comanda.poblacio}}</h6>
-    <form>
+
       <div class="form-group">
         <label for="nom">Nom:</label>
         <input type="text" class="form-control" id="nom" name="nom" [(ngModel)] = "comanda.nom">
@@ -23,8 +23,9 @@
         <input type="email" class="form-control" id="email" name="email" [(ngModel)] = "comanda.email">
       </div>
 
-    </form>
+
 
     <button type="button" class="btn btn-warning" (click) = "saveComanda()">Desar</button> &nbsp;
-  </div>
+
+</form>
 </div>

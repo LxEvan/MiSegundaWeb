@@ -34,7 +34,7 @@ export class AltaEventComponent implements OnInit {
   onFormSubmit(itemForm: any): void {
 
       console.log(itemForm);
-      
+
 
       // Guardem els valors del formulari en una nova comanda
       this.newComanda = new Comanda(itemForm.controls.nom.value,
@@ -49,7 +49,7 @@ export class AltaEventComponent implements OnInit {
 
   }
 
-  // Funcio per validar dades rebudes dels inputs del formulari, la funcio rep els parametres de nom, lloc, email i missatge
+  // Funcio per validar dades rebudes dels inputs del formulari, la funcio rep els parametres de nom, poblacio, email i missatge
   EnviarDatos(nom, poblacio, email, missatge){
 
     // Comprovem que el valor del nom no sigui buit, si és buit enviem missattge i si és correcte recollim el valor a l'array "comandes"
@@ -63,12 +63,12 @@ export class AltaEventComponent implements OnInit {
 
     if(poblacio.value =="") {
       this.mostrarInfo="Error!, escriu una població";
+    }else {
+      this.mostrarInfo="Incorrecto";
+    }
 
-      if(email.value == "") {
+    if(email.value == "") {
         this.mostrarInfo="Error!, escriu el teu email";
-      }
-
-
     }else {
       this.mostrarInfo="Incorrecto";
     }
@@ -78,8 +78,6 @@ export class AltaEventComponent implements OnInit {
     if(missatge.value.length <= 2) {
       this.mostrarMensaje = "El texto introducido es demasiado corto";
     }
-
-
 
   }
 }
