@@ -27,7 +27,7 @@ export class EventsComponent implements OnInit {
 
   }
 /////////////////A PARTIR DE AQUÍ
-  // Funció que s'executa al fer click(seleccionar) a un personatge de la llista
+  // Funció que s'executa al fer click(seleccionar) a una comanda de la llista
   selectComanda(comanda: Comanda): void {
 
     // Treiem la interfaz de crear una comanda nova

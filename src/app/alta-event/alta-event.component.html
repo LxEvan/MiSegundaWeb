@@ -2,10 +2,25 @@
 
 <h3>OMPLE EL FORMULARI</h3>
 
+<!--#itemForm Las variables de plantilla le ayudan a utilizar datos de una parte de una plantilla en otra parte
+   de la plantilla. Con las variables de plantilla, puede realizar tareas como responder a la entrada del usuario
+   o ajustar con precisión los formularios de su aplicación.
+  //ngForm Crea una FormGroupinstancia de nivel superior y la vincula a un formulario para realizar un seguimiento del valor
+   agregado del formulario y el estado de validación.
+  //Devuelve si se ha activado el envío del formulario.-->
+
 <form #itemForm="ngForm" (ngSubmit)="onFormSubmit(itemForm)">
+
+<!--La .form-groupclase es la forma más fácil de agregar algo de estructura a los formularios. Proporciona una clase flexible que fomenta
+   la agrupación adecuada de etiquetas, controles, texto de ayuda opcional y mensajes de validación de formularios.-->
 
   <div class="form-group">
     <label for="nom">Nom:</label>
+    <!--con la class="form-control" podemos controlar las entradas de formato como por ej. la altura.
+    La FormControlinstancia(NgModel) rastrea el valor, la interacción del usuario y el estado de validación del control y mantiene la vista sincronizada con el modelo. Si se usa
+    dentro de un formulario principal, la directiva también se registra con el formulario como un control secundario.
+    Esta directiva se utiliza sola o como parte de un formulario más amplio. Utilice el ngModelselector para activarlo. -->
+
     <input type="text" class="form-control" #vNom id="nom" name="nom" placeholder="Escriu el teu nom" ngModel required>
   </div>
 
@@ -20,6 +35,8 @@
       <input type="email" class="form-control" #vEmail id="email" name="email" placeholder="Escriu el teu email" ngModel required>
   </div>
 
+  <!--ngSwitch recibe las instrucciones del Switch y sus condicionales declarado en el TS del mismo componente, en este caso
+  aparecerá el mensaje de Correcte o Incorrecte en función de si los datos del formulario han sido bien introducidos o no-->
   <div [ngSwitch]="mostrarInfo">
     <div id="correcte" *ngSwitchCase="'Correcte'">Correcte</div>
     <div id="incorrecte" *ngSwitchCase="'Incorrecte'">Incorrecte</div>
@@ -30,12 +47,17 @@
      <textarea type="text" class="form-control" #vMissatge id="missatge" name="missatge" placeholder="Escriu el teu missatge" ngModel required></textarea>
   </div>
 
+  <!--ngSwitch corresponde a condicional en función de si el mensaje introducido por el usuario -->
   <div [ngSwitch]="mostrarMensaje">
     <div id="mensaje" *ngSwitchCase="'El texto introducido es demasiado corto'">El texto introducido es demasiado corto</div>
   </div>
 
+  <!--Cuando hacemos clicK enviamos los datos introducidos por el usuario y recogidos en las siguientes variables
+  al TS del mismo componente para su validación -->
   <input type="button" (click)="EnviarDatos(vNom.value, vPoblacio.value, vEmail.value, vMissatge.value)" value="Enviar"/>
 
+  <!--En este click lo que hacemos es añadir los datos introducidos en el formulario por el usuario a la lista que
+  aparece en la página web cuando entramos en Eventos.  Esta lista es un array declarado en el TS del componente Events-->
   <button type="button" class="btn btn-primary" (click)="onFormSubmit(itemForm)">Si és correcte Desar</button>
 
 

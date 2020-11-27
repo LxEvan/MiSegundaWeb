@@ -1,8 +1,12 @@
+
+<!--container fluid para un contenedor de ancho completo, que abarque todo el ancho de la ventana gráfica. -->
 <div class="container-fluid">
 
+  <!--con class row y class col controlamos la posición dónde colocaremos los elementos-->
   <div class="row">
     <div class="col">
       <div class="btn-group col-12" role="group" aria-label="Basic example">
+        <!--definimos los botones para el menú de los eventos-->
         <button type="button" class="btn btn-secondary col-4" (click)="canviEvent('Alta Event')">Alta Event (Alta comanda nova) </button>
         <button type="button" class="btn btn-secondary col-4" (click)="canviEvent('Modificar Event')">Modificar Event (Modifica l'estat de la comanda)</button>
         <button type="button" class="btn btn-secondary col-4" (click)="canviEvent('Eliminar Event')">Eliminar Event  (Comanda lliurada)</button>
@@ -10,22 +14,33 @@
     </div>
   </div>
 
+  <!--definimos el tipo de lista para mostrar por pantalla los elementos-->
   <div class="col">
     <div class="list-group">
+      <!--ngFor y let comanda of comandesArray para mostrar por pantalla los elementos en lista, Array siempre se
+      recorre con un For-->
       <a *ngFor="let comanda of comandesArray" class="list-group-item list-group-item-action" (click)="selectComanda(comanda)">Comanda de:
+        <!--estamos mostrando el array recorrido, indicamos que en este caso queremos mostrar el valor nombre y el valor població-->
         {{comanda.nom}}, Localitat: {{comanda.poblacio}}
       </a>
 
     </div>
   </div>
 
+  <!--ngIf para determinar con condicionales el evento que queremos mostrar de los que ocupan el menú detallado en el 
+  superior de este apartado, según lo que selecciona el usuario entramos en uno y otro evento-->
   <div *ngIf="category === 'Alta Event'" class="row" style="margin-top: 1em;">
           <app-alta-event (comandaEvent)="addComanda($event)"></app-alta-event>
+    <!--si hemos seleccionado este evento indicamos con app-alta-event que vamos a buscar los contenidos del elemento
+    alta-event.
+    Le pasamos los parámetros de l'event comandaEvent(en este caso el pedido nuevo) declarada en alta-event.TS>!-->
 
   </div>
 
   <div *ngIf="category === 'Modificar Event'"  class="row" style = "margin-top: 1em">
           <app-modificar-event [comanda]="comandaSelected" (saveEvent)="updateComanda($event)"></app-modificar-event>
+    <!--si hemos seleccionado este evento indicamos con app-modificar-event que vamos a buscar los contenidos del elemento
+    modificr-event-->
   </div>
 
   <div *ngIf="category === 'Eliminar Event'"  class="row" style = "margin-top: 1em">
